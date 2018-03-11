@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/api/user', function (\Illuminate\Http\Request $request) {
+    $user = new App\Models\user;
+    return $user->signUp($request);
+});
